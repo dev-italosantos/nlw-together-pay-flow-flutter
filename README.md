@@ -12,6 +12,13 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+## TO-DO list:
+- [x] Overview do projeto do Figma
+- [x] A arquitetura do Projeto
+- [x] Criando a SplashPage
+- [x] Criando a LoginPage
+- [x] Criar a estrutura base da HomePage
+
 ## 🖌️ UI design
 
 The design was created by Rockeatset and can be found at https://www.figma.com/file/kLK7FYnWKMoN68sQXcSniu/PayFlow?node-id=58686%3A165
