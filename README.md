@@ -1,6 +1,10 @@
-# 📊 PayFlow
+<p align="center">
+      <img src="https://user-images.githubusercontent.com/59374587/122830149-4f3dc700-d2be-11eb-9fe2-316561d10772.png" width="100" alt="Logo PayFlow"/>
+</p>
 
-A mobile app being built with NLW Together (a Rocketseat event - https://app.rocketseat.com.br/). This content aims to build an app for organizing slips.
+A mobile app being built with NLW Together (a Rocketseat event - https://app.rocketseat.com.br/). This application is a Boletos and Payments Manager, which contains several features, which will soon be developed.
+
+<img src="assets/images/Capa.png">
 
 ## ⚠️ Requirements
 
@@ -9,6 +13,13 @@ You must have installed Flutter and Dart in your machine. For that, see the inst
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## TO-DO list:
+- [x] Overview do projeto do Figma
+- [x] A arquitetura do Projeto
+- [x] Criando a SplashPage
+- [x] Criando a LoginPage
+- [x] Criar a estrutura base da HomePage
 
 ## 🖌️ UI design
 
