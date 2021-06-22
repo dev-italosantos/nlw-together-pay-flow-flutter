@@ -2,9 +2,9 @@
       <img src="https://user-images.githubusercontent.com/59374587/122830149-4f3dc700-d2be-11eb-9fe2-316561d10772.png" width="100" alt="Logo PayFlow"/>
 </p>
 
-<img src="assets/images/Capa.png">
-
 A mobile app being built with NLW Together (a Rocketseat event - https://app.rocketseat.com.br/). This application is a Boletos and Payments Manager, which contains several features, which will soon be developed.
+
+<img src="assets/images/Capa.png">
 
 ## ⚠️ Requirements
 
