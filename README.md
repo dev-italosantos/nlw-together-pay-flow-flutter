@@ -1,5 +1,7 @@
 # 📊 PayFlow
 
+<img src="assets/images/Capa.png">
+
 A mobile app being built with NLW Together (a Rocketseat event - https://app.rocketseat.com.br/). This content aims to build an app for organizing slips.
 
 ## ⚠️ Requirements
