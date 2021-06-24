@@ -5,8 +5,10 @@ import 'package:payflow/shared/themes/app_text_styles.dart';
 
 class SocialLoginButtonWidget extends StatelessWidget {
   final VoidCallback onTap;
-  const SocialLoginButtonWidget({Key? key, required this.onTap})
-      : super(key: key);
+  const SocialLoginButtonWidget({
+    Key? key,
+    required this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,6 @@ class SocialLoginButtonWidget extends StatelessWidget {
               flex: 1,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                
                 children: [
                   Image.asset(AppImages.google),
                   SizedBox(
