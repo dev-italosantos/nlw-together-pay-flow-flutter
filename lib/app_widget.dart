@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payflow/modules/splash/spash_page.dart';
+import 'package:payflow/modules/splash/splash_page.dart';
 
 import 'modules/home/home_page.dart';
 import 'modules/login/login_page.dart';
