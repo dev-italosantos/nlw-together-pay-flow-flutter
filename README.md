@@ -20,6 +20,10 @@ samples, guidance on mobile development, and a full API reference.
 - [x] Criando a SplashPage
 - [x] Criando a LoginPage
 - [x] Criar a estrutura base da HomePage
+- [x] Firebase
+- [x] Sistema de autenticação do App
+- [x] Rotas de navegação
+- [x] SharedPreferences
 
 ## 🖌️ UI design
 
