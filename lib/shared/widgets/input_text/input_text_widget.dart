@@ -1,39 +1,68 @@
 import 'package:flutter/material.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
+import 'package:payflow/shared/themes/app_text_styles.dart';
 
-class InputTextWidget extends StatefulWidget {
-  const InputTextWidget({Key? key}) : super(key: key);
+class InputTextWidget extends StatelessWidget {
+  final String label;
+  final IconData icon;
+  final String? initialValue;
+  final String? Function(String?)? validator;
+  final TextEditingController? controller;
+  final void Function(String value) onChanged;
 
-  @override
-  _InputTextWidgetState createState() => _InputTextWidgetState();
-}
+  const InputTextWidget({
+    Key? key,
+    required this.label,
+    required this.icon,
+    this.initialValue,
+    this.validator,
+    this.controller,
+    required this.onChanged,
+  }) : super(key: key);
 
-class _InputTextWidgetState extends State<InputTextWidget> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TextFormField(
-          decoration: InputDecoration(
-            icon: Row(
-              children: [
-                Icon(Icons.ac_unit),
-                Container(
-                  width: 1,
-                  height: 48.0,
-                  color: AppColors.stroke,
-                ),
-              ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16.0),
+      child: Column(
+        children: [
+          TextFormField(
+            controller: controller,
+            onChanged: onChanged,
+            initialValue: initialValue,
+            validator: validator,
+            style: TextStyles.input,
+            decoration: InputDecoration(
+              contentPadding: EdgeInsets.zero,
+              labelText: label,
+              labelStyle: TextStyles.input,
+              icon: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                    child: Icon(
+                      Icons.ac_unit,
+                      color: AppColors.primary,
+                    ),
+                  ),
+                  Container(
+                    width: 1,
+                    height: 48.0,
+                    color: AppColors.stroke,
+                  ),
+                ],
+              ),
+              border: InputBorder.none,
             ),
-            border: InputBorder.none,
           ),
-        ),
-        Divider(
-          height: 1,
-          thickness: 1,
-          color: AppColors.stroke,
-        ),
-      ],
+          Divider(
+            height: 1,
+            thickness: 1,
+            color: AppColors.stroke,
+          ),
+        ],
+      ),
     );
   }
 }
