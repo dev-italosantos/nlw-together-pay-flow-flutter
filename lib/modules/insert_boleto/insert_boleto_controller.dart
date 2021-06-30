@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:payflow/shared/models/boleto_model.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // ignore: camel_case_types
 class insertBoleroController {
@@ -31,8 +32,18 @@ class insertBoleroController {
     );
   }
 
-  void cadastraBoleto() {
+  Future<void> saveBoleto() async {
+    final instance = await SharedPreferences.getInstance();
+    final boletos = instance.getStringList("boletos") ?? <String>[];
+    boletos.add(model.toJson());
+    await instance.setStringList("boletos", boletos);
+    return;
+  }
+
+  Future<void> cadastraBoleto() async {
     final form = formKey.currentState;
-    if (form!.validate()) {}
+    if (form!.validate()) {
+      return saveBoleto();
+    }
   }
 }

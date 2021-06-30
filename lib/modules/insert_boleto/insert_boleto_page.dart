@@ -48,51 +48,70 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
           color: AppColors.input,
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 93.0,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 93.0,
+                ),
+                child: Text(
+                  "Preencha os dados do boleto",
+                  style: TextStyles.titleBoldHeading,
+                  textAlign: TextAlign.center,
+                ),
               ),
-              child: Text(
-                "Preencha os dados do boleto",
-                style: TextStyles.titleBoldHeading,
-                textAlign: TextAlign.center,
+              SizedBox(height: 24.0),
+              Form(
+                key: controller.formKey,
+                child: Column(
+                  children: [
+                    InputTextWidget(
+                      label: "Nome do boleto",
+                      icon: Icons.description_outlined,
+                      onChanged: (value) {
+                        controller.onChange(name: value);
+                      },
+                      validator: controller.validateName,
+                    ),
+                    InputTextWidget(
+                      controller: dueDateInputTextContrller,
+                      label: "Vencimento",
+                      icon: FontAwesomeIcons.timesCircle,
+                      onChanged: (value) {
+                        controller.onChange(dueDate: value);
+                      },
+                      validator: controller.validateVencimento,
+                    ),
+                    InputTextWidget(
+                      controller: moneyInputController,
+                      label: "Valor",
+                      icon: FontAwesomeIcons.wallet,
+                      onChanged: (value) {
+                        controller.onChange(
+                          value: moneyInputController.numberValue,
+                        );
+                      },
+                      validator: (_) => controller
+                          .validateValor(moneyInputController.numberValue),
+                    ),
+                    InputTextWidget(
+                      controller: barcodeInputTextController,
+                      label: "Código",
+                      icon: FontAwesomeIcons.barcode,
+                      onChanged: (value) {
+                        controller.onChange(barcode: value);
+                      },
+                      validator: controller.validateCodigo,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(height: 24.0),
-            InputTextWidget(
-              label: "Nome do boleto",
-              icon: Icons.description_outlined,
-              onChanged: (value) {},
-              validator: controller.validateName,
-            ),
-            InputTextWidget(
-              controller: dueDateInputTextContrller,
-              label: "Vencimento",
-              icon: FontAwesomeIcons.timesCircle,
-              onChanged: (value) {},
-              validator: controller.validateVencimento,
-            ),
-            InputTextWidget(
-              controller: moneyInputController,
-              label: "Valor",
-              icon: FontAwesomeIcons.wallet,
-              onChanged: (value) {},
-              validator: (_) =>
-                  controller.validateValor(moneyInputController.numberValue),
-            ),
-            InputTextWidget(
-              controller: barcodeInputTextController,
-              label: "Código",
-              icon: FontAwesomeIcons.barcode,
-              onChanged: (value) {},
-              validator: controller.validateCodigo,
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: SetLabelButtons(
@@ -102,7 +121,9 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
           Navigator.pop(context);
         },
         secondaryLabel: "Cadastrar",
-        secondaryOnPressed: () {},
+        secondaryOnPressed: () {
+          controller.cadastraBoleto();
+        },
       ),
     );
   }
