@@ -121,8 +121,9 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
           Navigator.pop(context);
         },
         secondaryLabel: "Cadastrar",
-        secondaryOnPressed: () {
-          controller.cadastraBoleto();
+        secondaryOnPressed: () async {
+          await controller.cadastraBoleto();
+          Navigator.pop(context);
         },
       ),
     );
