@@ -22,7 +22,7 @@ class _ExtractPageState extends State<ExtractPage> {
           child: Row(
             children: [
               Text(
-                "Meu extrato",
+                "Meu extratos",
                 style: TextStyles.titleBoldHeading,
               ),
             ],
