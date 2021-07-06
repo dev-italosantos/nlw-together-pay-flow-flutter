@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:payflow/modules/extract/extract_page.dart';
 import 'package:payflow/modules/meus_boletos/meus_boletos_page.dart';
+import 'package:payflow/shared/models/user_model.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
 
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  final UserModel user;
+  const HomePage({
+    Key? key,
+    required this.user,
+  }) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -15,7 +20,10 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final controller = HomeController();
-  final pages = [MeusBoletosPage(), ExtractPage()];
+  final pages = [
+    MeusBoletosPage(),
+    ExtractPage(),
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -31,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyles.titleRegular,
                   children: [
                     TextSpan(
-                      text: "Italo Santos",
+                      text: "${widget.user.name}",
                       style: TextStyles.titleRegular,
                     )
                   ],
@@ -47,6 +55,9 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(5.0),
+                  image: DecorationImage(
+                    image: NetworkImage(widget.user.photoURL!),
+                  ),
                 ),
               ),
             ),
