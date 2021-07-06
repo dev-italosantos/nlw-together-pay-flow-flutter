@@ -73,7 +73,9 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
                       label: "Nome do boleto",
                       icon: Icons.description_outlined,
                       onChanged: (value) {
-                        controller.onChange(name: value);
+                        controller.onChange(
+                          name: value,
+                        );
                       },
                       validator: controller.validateName,
                     ),
@@ -82,7 +84,9 @@ class _InsertBoletoPageState extends State<InsertBoletoPage> {
                       label: "Vencimento",
                       icon: FontAwesomeIcons.timesCircle,
                       onChanged: (value) {
-                        controller.onChange(dueDate: value);
+                        controller.onChange(
+                          dueDate: value,
+                        );
                       },
                       validator: controller.validateVencimento,
                     ),
