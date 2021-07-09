@@ -51,3 +51,7 @@ Color(0xFFFF941A); //Example of use
 
 https://github.com/rocketseat-education/nlw-06-flutter/tree/colors
 
+## 🔗 Find me!
+- Linkedin: https://www.linkedin.com/in/italo-santos-dev/
+- Instagram: https://www.instagram.com/italosantossz/
+- Github: https://github.com/dev-italosantos
